@@ -1,0 +1,164 @@
+###############################################################################
+# rlds-paired — Project configuration (PEP 517 / 518 / 621)
+#
+# This file is the canonical source of project metadata. The minimal setup.py
+# alongside it exists only as a fallback for environments that cannot read
+# pyproject.toml directly; the metadata is defined here.
+###############################################################################
+
+[build-system]
+requires      = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "rlds-paired"
+description = """\
+Paired dark-sector signature SDK for the RLDS cosmology series (Papers III–V): \
+numerical reproduction of growth suppression, phantom excursion, and spectral-gap \
+validation for the Regime-Limited Dynamical Systems framework.\
+"""
+readme         = "README.md"
+requires-python = ">=3.10"
+license        = "MIT"
+license-files  = ["LICENSE"]
+
+authors = [
+    { name = "Aleksander Kubanski", email = "research@kubanski.pro" },
+]
+maintainers = [
+    { name = "Aleksander Kubanski", email = "research@kubanski.pro" },
+]
+
+# The single source of truth for the version is rlds_paired/_version.py.
+dynamic = ["version"]
+
+keywords = [
+    "cosmology",
+    "dark energy",
+    "dark matter",
+    "interacting dark sector",
+    "attractor",
+    "growth rate",
+    "fsigma8",
+    "paired signature",
+    "RLDS",
+    "regime-limited",
+    "spectral gap",
+    "slow manifold",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "matplotlib>=3.7",
+]
+
+
+[project.optional-dependencies]
+mcmc = [
+    "emcee>=3.1",
+    "tqdm>=4",      # progress bar used by emcee in run_mcmc(progress=True)
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "build>=1.0",
+]
+
+
+[project.scripts]
+rlds-paired = "rlds_paired.cli:main"
+
+
+[project.urls]
+Homepage        = "https://research.kubanski.pro"
+Repository      = "https://github.com/Askuba77/rlds-paired"
+"Issue Tracker" = "https://github.com/Askuba77/rlds-paired/issues"
+Changelog       = "https://github.com/Askuba77/rlds-paired/blob/main/CHANGELOG.md"
+"Paper III"     = "https://doi.org/10.5281/zenodo.19636371"
+"Paper IV"      = "https://doi.org/10.5281/zenodo.19640061"
+"RLDS-MAT"      = "https://github.com/AKubanski/rlds-mat"
+
+
+###############################################################################
+# setuptools-specific configuration
+###############################################################################
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["rlds_paired*"]
+exclude = ["tests*", "examples*"]
+
+# Bundle the official DESI DR2 BAO data vector + covariance with the package.
+[tool.setuptools.package-data]
+rlds_paired = ["desi_dr2/*.txt"]
+
+# Dynamic version: read __version__ from rlds_paired/_version.py.
+[tool.setuptools.dynamic]
+version = { attr = "rlds_paired._version.__version__" }
+
+
+###############################################################################
+# pytest
+###############################################################################
+
+[tool.pytest.ini_options]
+minversion     = "7.0"
+testpaths      = ["tests"]
+addopts        = "-ra --strict-markers --strict-config"
+python_files   = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+filterwarnings = [
+    "error::DeprecationWarning",
+    "ignore::UserWarning",
+]
+
+
+###############################################################################
+# coverage
+###############################################################################
+
+[tool.coverage.run]
+source  = ["rlds_paired"]
+branch  = true
+parallel = true
+concurrency = ["thread"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+show_missing = true
+precision    = 1
+
+
+###############################################################################
+# black (optional code formatter — see dev extras)
+###############################################################################
+
+[tool.black]
+line-length    = 88
+target-version = ["py310", "py311", "py312"]

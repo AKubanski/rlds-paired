@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it together with the accompanying RLDS papers."
+title: "rlds-paired: Paired Dark-Sector Signature SDK"
+abstract: >-
+  Reference implementation for the paired growth-suppression signature of the
+  Regime-Limited Dynamical Systems (RLDS) interacting dark-sector model,
+  accompanying RLDS Papers III-V. Recomputes the headline results (paired
+  coefficient, spectral gap, attractor, present-day matter fraction) directly
+  from the model rather than storing literals.
+version: "1.0.0"
+date-released: "2026-06-09"
+license: MIT
+type: software
+authors:
+  - family-names: "Kubanski"
+    given-names: "Aleksander"
+    orcid: "https://orcid.org/0009-0006-7239-5074"
+    affiliation: "Independent Researcher, Poland"
+repository-code: "https://github.com/Askuba77/rlds-paired"
+url: "https://research.kubanski.pro"
+keywords:
+  - cosmology
+  - dark energy
+  - dark matter
+  - interacting dark sector
+  - dynamical systems
+  - structure growth
+# A software DOI will be minted by Zenodo on first release; add it here as:
+#   doi: "10.5281/zenodo.XXXXXXX"
+references:
+  - type: article
+    title: "RLDS III: A Paired Signature of the Dark-Sector Attractor"
+    authors:
+      - family-names: "Kubanski"
+        given-names: "Aleksander"
+    doi: "10.5281/zenodo.19636371"
+    year: 2026
+  - type: article
+    title: "RLDS IV: Three Structural Consequences"
+    authors:
+      - family-names: "Kubanski"
+        given-names: "Aleksander"
+    doi: "10.5281/zenodo.19640061"
+    year: 2026
+  - type: article
+    title: "RLDS V: Microphysical Emergence of Regime-Limited Dark-Sector Dynamics"
+    authors:
+      - family-names: "Kubanski"
+        given-names: "Aleksander"
+    year: 2026
+    notes: "Forthcoming; Zenodo DOI to be added on release."

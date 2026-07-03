@@ -6,12 +6,13 @@ include CITATION.cff
 include SECURITY.md
 include CODE_OF_CONDUCT.md
 include RELEASING.md
+include REPRODUCE_FIGURES.md
 include .zenodo.json
 include pyproject.toml
 recursive-include rlds_paired *.py
 recursive-include rlds_paired/desi_dr2 *.txt
 recursive-include tests *.py
-recursive-include scripts *.py
+recursive-include scripts *.py *.md
 recursive-include examples *.py *.json *.yaml
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]

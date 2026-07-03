@@ -34,6 +34,26 @@
     },
     {
       "relation": "isSupplementTo",
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.19640630"
+    },
+    {
+      "relation": "isVersionOf",
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.20801099"
+    },
+    {
+      "relation": "isIdenticalTo",
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.20801100"
+    },
+    {
+      "relation": "references",
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.20342965"
+    },
+    {
+      "relation": "isSupplementTo",
       "scheme": "url",
       "identifier": "https://github.com/Askuba77/rlds-paired"
     }

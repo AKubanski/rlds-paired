@@ -25,8 +25,14 @@ keywords:
   - interacting dark sector
   - dynamical systems
   - structure growth
-# A software DOI will be minted by Zenodo on first release; add it here as:
-#   doi: "10.5281/zenodo.XXXXXXX"
+doi: "10.5281/zenodo.20801100"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20801099"
+    description: "Concept DOI (all versions) of the rlds-paired SDK on Zenodo."
+  - type: doi
+    value: "10.5281/zenodo.20801100"
+    description: "Version DOI (v1.0.0) of the rlds-paired SDK on Zenodo."
 references:
   - type: article
     title: "RLDS III: A Paired Signature of the Dark-Sector Attractor"
@@ -47,5 +53,13 @@ references:
     authors:
       - family-names: "Kubanski"
         given-names: "Aleksander"
+    doi: "10.5281/zenodo.19640630"
     year: 2026
-    notes: "Forthcoming; Zenodo DOI to be added on release."
+  - type: software
+    title: "rlds-mat: RLDS Mathematical Core SDK"
+    authors:
+      - family-names: "Kubanski"
+        given-names: "Aleksander"
+    doi: "10.5281/zenodo.20342965"
+    year: 2026
+    notes: "Mathematical core (Papers I-II); upstream of rlds-paired."

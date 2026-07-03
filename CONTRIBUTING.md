@@ -23,7 +23,8 @@ RLDS framework as published in:
   (Zenodo, [doi:10.5281/zenodo.19636371](https://doi.org/10.5281/zenodo.19636371))
 - *Paper IV: Cosmological consequences under RLDS closure*
   (Zenodo, [doi:10.5281/zenodo.19640061](https://doi.org/10.5281/zenodo.19640061))
-- *Paper V: Microphysical descent to RLDS* (Zenodo)
+- *Paper V: Microphysical descent to RLDS*
+  (Zenodo, [doi:10.5281/zenodo.19640630](https://doi.org/10.5281/zenodo.19640630))
 
 The library focuses on: the algebraic IDE expansion history, the two-phase
 ODE trajectory, linear growth factor, paired-signature K-scan, and spectral-gap

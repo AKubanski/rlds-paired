@@ -95,8 +95,9 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - The `alpha` posterior is 100 % railed against the prior floor 3.01: the
   phantom excursion is prior-dependent and the data are consistent with
   `w = −1`. Documented in `chains/METADATA.md`.
-- The concept DOI `10.5281/zenodo.20771954` is unchanged; this release adds
-  the MCMC code referenced by Papers III/IV.
+- This release added the MCMC code referenced by Papers III/IV. (Its Zenodo
+  concept DOI `10.5281/zenodo.20771954` was a **deleted/obsolete record** — see
+  the versioning-reset note at the top of this file; do not cite it.)
 
 ---
 

@@ -1,0 +1,30 @@
+{
+  "description": "Reference model-comparison values used in RLDS Papers III-IV.",
+  "sign_convention": "Delta = RLDS - LCDM. Positive Delta chi2 / Delta BIC means the RLDS fit is disfavored relative to LCDM.",
+  "values_are_stored_reference_not_recomputed": true,
+  "values_provenance": "These chi2 / Delta BIC values are taken from the model-comparison table in Paper IV (Table 2, RLDS Papers III-IV). They are NOT recomputed by this SDK at import or test time, because the underlying model comparison is supernova-inclusive and requires the external Pantheon+ / Pantheon+SH0ES dataset (not redistributed here). The SDK can reproduce the model-level quantities (paired coefficient, spectral gap, attractor, present-day matter fraction) from code; the likelihood-level chi2 / BIC are traceable here but not re-derivable from the archive alone.",
+  "raw_pantheon_plus_included": false,
+  "external_data_policy": "Pantheon+ / Pantheon+SH0ES raw data are not redistributed in this SDK archive because they are an external third-party dataset. Full likelihood rerun requires the user to obtain the external Pantheon+ / Pantheon+SH0ES data from the official source and place it under the documented local data path.",
+  "external_data_expected_file": "Pantheon+SH0ES.dat",
+  "external_data_expected_locations": [
+    "$RLDS_DATA_DIR/Pantheon+SH0ES.dat",
+    "~/cosmology_data/Pantheon+SH0ES.dat"
+  ],
+  "rlds_chi2_best": 750.89,
+  "lcdm_chi2_best": 714.67,
+  "delta_chi2_rlds_minus_lcdm": 36.22,
+  "delta_aic_rlds_minus_lcdm": 42.23,
+  "delta_bic_rlds_minus_lcdm": 58.37,
+  "n_data": 1605,
+  "k_lcdm": 2,
+  "k_rlds": 5,
+  "chain_argmax_chi2": 750.9532490487464,
+  "notes": [
+    "The raw external Pantheon+ / Pantheon+SH0ES dataset is not redistributed.",
+    "This SDK archive includes derived outputs, archived chains, summary arrays, and reference model-comparison values.",
+    "A full dynamic likelihood rerun requires the external dataset and the original likelihood environment.",
+    "The reference values are included to make the paper-level Delta chi2 and Delta BIC claims traceable without redistributing third-party data.",
+    "rlds_chi2_best (750.89), lcdm_chi2_best (714.67), and all deltas are taken directly from the Paper IV model-comparison table. chain_argmax_chi2 (750.9532) is the value of -2*logpost at the chain argmax stored in chains/summary.npy; it differs from the table value by 0.06 because logpost includes the prior, which is non-trivially active at the alpha prior floor (3.01).",
+    "Parameter counts: k_lcdm=2 (Omega_m, H0), k_rlds=5 (K, H0, R_c, Delta_R, alpha; Omega_m is derived, not counted). n_data=1605 (Pantheon+SH0ES 1590 SNe + DESI DR2 BAO 13 + Planck prior 2)."
+  ]
+}

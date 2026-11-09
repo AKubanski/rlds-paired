@@ -1,0 +1,16 @@
+
+cmb+bao  (chi2_LCDM = 15.48, N = 16)
+model             dchi2    dAIC    dBIC  key params
+LCDM              +0.00   +0.00   +0.00  {'Om': 0.3}  Om_today=0.300
+wCDM              -0.46   +1.54   +2.31  {'Om': 0.2957, 'w': -1.0263}  Om_today=0.296
+CPL               -8.15   -4.15   -2.60  {'Om': 0.3515, 'w0': -0.4345, 'wa': -1.6775}  Om_today=0.352
+RLDS-shooting     -0.30   +5.70   +8.02  {'K': 0.0204, 'Rc': 0.5176, 'dR': 0.0956, 'alpha': 3.0157}  Om_today=0.322
+RLDS-free         -3.20   +4.80   +7.89  {'Om': 0.45, 'K': 0.2087, 'Rc': 0.5631, 'dR': 0.1977, 'alpha': 3.2544}  Om_today=0.450
+
+cmb+bao+sn  (chi2_LCDM = 1421.36, N = 1606)
+model             dchi2    dAIC    dBIC  key params
+LCDM              +0.00   +0.00   +0.00  {'Om': 0.3014}  Om_today=0.301
+wCDM              -0.91   +1.09   +6.47  {'Om': 0.3047, 'w': -0.9771}  Om_today=0.305
+CPL               -7.66   -3.66   +7.10  {'Om': 0.3106, 'w0': -0.8519, 'wa': -0.5248}  Om_today=0.311
+RLDS-shooting     -1.36   +4.64  +20.78  {'K': 0.0217, 'Rc': 0.513, 'dR': 0.03, 'alpha': 3.017}  Om_today=0.325
+RLDS-free         -4.75   +3.25  +24.78  {'Om': 0.3872, 'K': 0.0897, 'Rc': 0.5967, 'dR': 0.2, 'alpha': 3.0998}  Om_today=0.387

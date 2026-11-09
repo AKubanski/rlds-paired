@@ -49,7 +49,7 @@ loaded eagerly.  The physics modules (numpy/scipy) and the analysis module
 (matplotlib) are imported lazily on first use via PEP 562 ``__getattr__``.
 
 Homepage  : https://research.kubanski.pro
-Repository: https://github.com/Askuba77/rlds-paired
+Repository: https://github.com/AKubanski/rlds-paired
 Author    : Aleksander Kubanski <research@kubanski.pro>
 License   : MIT
 """

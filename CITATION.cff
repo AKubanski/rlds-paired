@@ -2,13 +2,13 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it together with the accompanying RLDS papers."
 title: "rlds-paired: Paired Dark-Sector Signature SDK"
 abstract: >-
-  Reference implementation for the paired growth-suppression signature of the
-  Regime-Limited Dynamical Systems (RLDS) interacting dark-sector model,
-  accompanying RLDS Papers III-V. Recomputes the headline results (paired
-  coefficient, spectral gap, attractor, present-day matter fraction) directly
-  from the model rather than storing literals.
-version: "1.0.0"
-date-released: "2026-06-09"
+  Reference implementation for the Regime-Limited Dynamical Systems (RLDS)
+  interacting dark-sector model, accompanying RLDS Papers III-VI. Version 1.1.0
+  adds the corrected, DESI DR2-validated likelihood and all scripts, outputs
+  and chains needed to reproduce RLDS VI (see REPRODUCE_VI.md); the legacy
+  likelihood of Papers III-IV is kept unchanged for reproducibility.
+version: "1.1.0"
+date-released: "2026-11-08"
 license: MIT
 type: software
 authors:
@@ -16,7 +16,7 @@ authors:
     given-names: "Aleksander"
     orcid: "https://orcid.org/0009-0006-7239-5074"
     affiliation: "Independent Researcher, Poland"
-repository-code: "https://github.com/Askuba77/rlds-paired"
+repository-code: "https://github.com/AKubanski/rlds-paired"
 url: "https://research.kubanski.pro"
 keywords:
   - cosmology
@@ -25,14 +25,11 @@ keywords:
   - interacting dark sector
   - dynamical systems
   - structure growth
-doi: "10.5281/zenodo.20801100"
+doi: "10.5281/zenodo.20801099"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.20801099"
     description: "Concept DOI (all versions) of the rlds-paired SDK on Zenodo."
-  - type: doi
-    value: "10.5281/zenodo.20801100"
-    description: "Version DOI (v1.0.0) of the rlds-paired SDK on Zenodo."
 references:
   - type: article
     title: "RLDS III: A Paired Signature of the Dark-Sector Attractor"

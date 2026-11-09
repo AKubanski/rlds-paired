@@ -7,6 +7,40 @@
 > an internal record; the public v1.0.0 release notes will be consolidated into
 > a single entry at release time.
 
+## [1.1.0] — RLDS VI: corrected likelihood and closing analysis (November 2026)
+
+Added — everything needed to reproduce RLDS VI (see `REPRODUCE_VI.md`):
+
+- `rlds_paired/likelihood_v2.py`: corrected likelihood. Planck 2018 distance
+  priors (R, l_A, omega_b) with full correlations (Chen, Huang & Wang 2019);
+  z* (Hu & Sugiyama) and r_d (Aubourg et al. 2015) from the **early** matter
+  density of the solution, not today's Omega_m; radiation from h; omega_b as an
+  independent parameter; l_A convention factor calibrated against CLASS;
+  DESI DR2 BAO with full covariance; Pantheon+ with the full STAT+SYS
+  covariance and analytic marginalisation over M. Model constructors for
+  LCDM, wCDM, CPL, RLDS (free Omega_m) and RLDS (shooting closure).
+- `tests/test_likelihood_v2.py`: 15 tests (55 in total), including the
+  comparison principle and a regression test of the legacy pipeline.
+- `rlds_paired/mcmc_v2.py`: resumable emcee runs on the corrected likelihood.
+- `validation/`: all scripts, JSON outputs, logs and figures of Paper VI —
+  DESI DR2 validation, profile likelihoods in K and in dOm for both closures,
+  fits with widened priors, the uniform w0-wa scan and the likelihood of its
+  hits, the controlled likelihood x priors comparison with the legacy
+  pipeline, small numerical checks (`checks_misc.py`) and the final polishing
+  of the shooting best fits listed in Table 2 (`polish_shoot.py`).
+- `validation/chains/`: MCMC chains (LCDM, wCDM, CPL converged; RLDS-free not
+  converged, kept for completeness).
+
+Changed — release metadata: `CITATION.cff` cites the concept DOI
+(10.5281/zenodo.20801099) instead of the v1.0.0 version DOI; the `isIdenticalTo`
+link to the v1.0.0 record is removed from `.zenodo.json`; repository URLs point to
+the public repository github.com/AKubanski/rlds-paired; `RELEASING.md` describes
+the manual release procedure (git tag, then New version on the Zenodo record).
+
+Unchanged: `rlds_paired/mcmc.py` (legacy likelihood of Papers III–IV) and the
+canonical frame of `REPRODUCE_FIGURES.md`, kept for reproducibility of
+Papers III–V; both are superseded for observational conclusions by Paper VI.
+
 ## [Unreleased] — DESI DR2 + fresh v1.0.0 (1.0.0.dev0)
 
 - **BAO data migrated from DESI DR1 to DESI DR2** (arXiv:2503.14738). The

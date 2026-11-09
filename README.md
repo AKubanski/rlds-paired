@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
-[![CI](https://github.com/Askuba77/rlds-paired/actions/workflows/ci.yml/badge.svg)](https://github.com/Askuba77/rlds-paired/actions/workflows/ci.yml)
+[![CI](https://github.com/AKubanski/rlds-paired/actions/workflows/ci.yml/badge.svg)](https://github.com/AKubanski/rlds-paired/actions/workflows/ci.yml)
 
 A Python library for reproducing the numerical results of the RLDS
 cosmology series (Papers III–V).  `rlds-paired` is the observational–cosmological
@@ -20,6 +20,16 @@ c  ≈  −0.19      (negative: growth suppression)
 The coefficient is **computed from the model code, not stored as a literal** —
 recompute it with `rlds_paired.reference.reference_results()`.
 
+> **Status after Paper VI (November 2026).** The observational conclusions of
+> Papers III–IV — the shooting fit worse than ΛCDM by Δχ² ≈ +36, the "canonical"
+> frame `K = 0.0106`, `α = 3.0102`, `Ω_m = 0.297`, and the paired coefficient as a
+> physical prediction — are superseded by **RLDS VI**, the closing analysis
+> against DESI DR2 with a corrected, validated likelihood
+> (`rlds_paired/likelihood_v2.py`). The legacy likelihood in
+> `rlds_paired/mcmc.py` and the canonical frame below are kept unchanged for
+> reproducibility of Papers III–V. See [`REPRODUCE_VI.md`](REPRODUCE_VI.md)
+> for every number, table and figure of Paper VI.
+
 ## Theory references
 
 This library implements the methods from:
@@ -33,6 +43,10 @@ This library implements the methods from:
 
 3. Kubanski, A. (2026). *Microphysical descent to RLDS.*
    Zenodo. [doi:10.5281/zenodo.19640630](https://doi.org/10.5281/zenodo.19640630) [Paper V]
+
+4. Kubanski, A. (2026). *RLDS VI: What the Expansion History Tests in a
+   Regime-Limited Interacting Dark Sector — A Closing Analysis against DESI DR2.*
+   Zenodo (DOI to be added on publication). [Paper VI]
 
 The mathematical core (Papers I–II) is implemented in
 [rlds-mat](https://github.com/AKubanski/rlds-mat)

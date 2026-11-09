@@ -10,4 +10,4 @@ runtime dependencies (numpy, scipy, matplotlib).
 ``[tool.setuptools.dynamic]``, and ``rlds_paired/__init__.py`` re-exports it.
 """
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"

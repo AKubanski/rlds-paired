@@ -1,0 +1,16 @@
+
+CPL: steps=4000, max tau=69, steps/tau=58 (OK), acc=0.54, samples=4160
+  Om     mean=0.3108  68%: [0.3052, 0.3163]  95% upper=0.3203  tau=64
+  H0     mean=67.6003  68%: [67.0285, 68.1838]  95% upper=68.5519  tau=69
+  wb     mean=0.0224  68%: [0.0223, 0.0226]  95% upper=0.0227  tau=58
+  w0     mean=-0.8455  68%: [-0.8987, -0.7922]  95% upper=-0.7550  tau=62
+  wa     mean=-0.5596  68%: [-0.7781, -0.3430]  95% upper=-0.2140  tau=65
+
+RLDS-free: steps=11000, max tau=967, steps/tau=11 (NOT converged by 50-tau rule), acc=0.14, samples=928
+  Om     mean=0.3814  68%: [0.3403, 0.4239]  95% upper=0.4408  tau=772
+  H0     mean=67.8033  68%: [67.2587, 68.3237]  95% upper=68.7765  tau=413
+  wb     mean=0.0225  68%: [0.0224, 0.0227]  95% upper=0.0228  tau=521
+  K      mean=0.1161  68%: [0.0509, 0.1791]  95% upper=0.2211  tau=967
+  Rc     mean=0.4901  68%: [0.3990, 0.5761]  95% upper=0.5928  tau=786
+  dR     mean=0.1202  68%: [0.0605, 0.1783]  95% upper=0.1929  tau=641
+  alpha  mean=3.0635  68%: [2.9533, 3.1742]  95% upper=3.2495  tau=635

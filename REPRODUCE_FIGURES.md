@@ -1,5 +1,9 @@
 # Reproducing the RLDS figures (Papers III–V)
 
+> **Note (November 2026).** The canonical frame below reproduces Papers III–V as
+> published. Their observational conclusions are superseded by RLDS VI; see
+> [`REPRODUCE_VI.md`](REPRODUCE_VI.md).
+
 This file maps each headline figure / result of the RLDS observational series
 to the exact entry point in `rlds-paired` that reproduces it, on the **DESI DR2
 canonical frame** (`K=0.0106`, `α=3.0102`, `R_c=0.565`, `ΔR=0.170`,

@@ -1,51 +1,64 @@
 # Releasing
 
-Releasing is **one manual step**. You never edit version numbers by hand.
-
-## One-time setup (do once)
-
-1. **PyPI Trusted Publisher** — on pypi.org, project `rlds-paired` →
-   *Publishing* → add a GitHub publisher:
-   - Repository: `Askuba77/rlds-paired`
-   - Workflow: `release.yml`
-   - Environment: `pypi`
-2. **Zenodo–GitHub** — log in to Zenodo with GitHub, flip the
-   `Askuba77/rlds-paired` repository switch **on**. Zenodo will archive every
-   published GitHub Release and mint a versioned DOI.
-3. After the **first** release, copy the software DOI Zenodo mints into
-   `CITATION.cff` (uncomment the `doi:` line) and the README, then commit.
+Releases are made by hand. The public repository
+(`AKubanski/rlds-paired`) has no GitHub Actions workflows, and the Zenodo
+record of the package (concept DOI `10.5281/zenodo.20801099`) is maintained by
+manual uploads. Every new version is therefore added with **New version** on
+that record, which keeps all versions under one concept DOI.
 
 ## Every release
 
 1. Update `CHANGELOG.md` with what changed.
-2. GitHub → **Actions → Release → Run workflow** → type the version (e.g. `1.0.1`).
+2. Sync the version number into `rlds_paired/_version.py`, `.zenodo.json` and
+   `CITATION.cff` (which also gets today's `date-released`):
 
-That's it. The workflow then:
+   ```bash
+   python scripts/bump_version.py 1.2.0
+   ```
 
-1. runs the full test suite — nothing irreversible happens unless it passes;
-2. runs `scripts/bump_version.py`, syncing the version into
-   `rlds_paired/_version.py`, `.zenodo.json` and `CITATION.cff`
-   (plus today's `date-released`);
-3. builds the wheel + sdist from the bumped working tree;
-4. commits the version bump and pushes it;
-5. creates tag `v<version>` and a GitHub Release — **Zenodo archives the
-   tagged tree, so the Zenodo record carries the correct version**;
-6. publishes the already-built artifacts to PyPI via Trusted Publishing
-   (OIDC, no stored token).
+3. Install and run the tests:
 
-## Why a script + tag, not just a tag
+   ```bash
+   python -m pip install -e ".[dev,mcmc]" h5py
+   python -m pytest tests/ -q
+   ```
 
-Zenodo reads `.zenodo.json` from the **committed tree of the release tag**. A
-stale `version` there makes every Zenodo record share one version label. The
-workflow bumps and commits *before* tagging, so the archived tree is always
-correct — and you only ever type the number once.
+   With the Pantheon+ files in `RLDS_DATA_DIR` all tests run; without them the
+   six tests that need these files are skipped.
+4. Commit, push and tag with git. Uploading through the browser does not work
+   for this repository: it accepts files up to 25 MB and at most 100 files at
+   a time, and the MCMC chains in `validation/chains/` are larger.
 
-## Manual fallback
+   ```bash
+   git add -A
+   git commit -m "v1.2.0: <summary>"
+   git push
+   git tag v1.2.0
+   git push origin v1.2.0
+   ```
 
-You can also bump locally without the workflow:
+5. On Zenodo, open the rlds-paired record → **New version** → replace the
+   file with the archive of the tag (GitHub → Tags → v1.2.0 → zip) → set
+   Version to `1.2.0` and the publication date → take the description,
+   keywords and related works from `.zenodo.json` → **Publish**. Note the new
+   version DOI.
+6. Optional: create a GitHub Release from the tag (Releases → Draft a new
+   release) with the CHANGELOG entry as release notes.
 
-```bash
-python scripts/bump_version.py 1.0.1
-```
+Keep the Zenodo–GitHub integration switched **off** for this repository. If it
+is on, publishing a GitHub Release makes Zenodo create a separate record with
+a new concept DOI.
 
-then commit, tag `v1.0.1`, and create the GitHub Release yourself.
+## Why the version is bumped before tagging
+
+`.zenodo.json` and `CITATION.cff` are part of the archived tree. A stale
+`version` there would label the new archive with the old version number, so
+`bump_version.py` runs before the commit that is tagged. `CITATION.cff` cites
+the concept DOI, which stays valid for every version.
+
+## Workflows
+
+Earlier versions of this file described a CI workflow and a release workflow
+in `.github/workflows/` (tests, version bump, tag, GitHub Release, PyPI via
+Trusted Publishing). These files are not part of the public repository, and
+the procedure above does not use them.

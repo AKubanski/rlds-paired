@@ -1,8 +1,8 @@
 {
   "title": "rlds-paired: Paired Dark-Sector Signature SDK",
   "upload_type": "software",
-  "description": "Reference implementation for the paired growth-suppression signature of the Regime-Limited Dynamical Systems (RLDS) interacting dark-sector model, accompanying RLDS Papers III-V. The package recomputes the headline results (paired coefficient c, spectral gap delta_max, attractor R*, present-day matter fraction) directly from the model code rather than storing literals, and exposes a CLI (verify, scan, spectral, fsigma8).",
-  "version": "1.0.0",
+  "description": "Reference implementation for the Regime-Limited Dynamical Systems (RLDS) interacting dark-sector model, accompanying RLDS Papers III-VI. Version 1.1.0 adds the corrected and DESI DR2-validated likelihood (Planck 2018 distance priors with early-time matter density, DESI DR2 BAO and Pantheon+ with full covariances), profile-likelihood and scan tools, and all scripts, outputs and chains needed to reproduce RLDS VI, the closing analysis against DESI DR2 (see REPRODUCE_VI.md). The legacy likelihood of Papers III-IV is kept unchanged for reproducibility.",
+  "version": "1.1.0",
   "license": "MIT",
   "access_right": "open",
   "creators": [
@@ -19,7 +19,11 @@
     "interacting dark sector",
     "dynamical systems",
     "structure growth",
-    "fsigma8"
+    "fsigma8",
+    "DESI DR2",
+    "profile likelihood",
+    "Pantheon+",
+    "Planck distance priors"
   ],
   "related_identifiers": [
     {
@@ -43,11 +47,6 @@
       "identifier": "10.5281/zenodo.20801099"
     },
     {
-      "relation": "isIdenticalTo",
-      "scheme": "doi",
-      "identifier": "10.5281/zenodo.20801100"
-    },
-    {
       "relation": "references",
       "scheme": "doi",
       "identifier": "10.5281/zenodo.20342965"
@@ -55,7 +54,7 @@
     {
       "relation": "isSupplementTo",
       "scheme": "url",
-      "identifier": "https://github.com/Askuba77/rlds-paired"
+      "identifier": "https://github.com/AKubanski/rlds-paired"
     }
   ]
 }

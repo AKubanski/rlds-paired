@@ -6,7 +6,7 @@ observational–cosmological SDK for the RLDS framework.
 ## Quick start
 
 ```bash
-git clone https://github.com/Askuba77/rlds-paired.git
+git clone https://github.com/AKubanski/rlds-paired.git
 cd rlds-paired
 pip install -e ".[dev]"
 pytest tests/

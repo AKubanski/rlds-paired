@@ -87,9 +87,9 @@ rlds-paired = "rlds_paired.cli:main"
 
 [project.urls]
 Homepage        = "https://research.kubanski.pro"
-Repository      = "https://github.com/Askuba77/rlds-paired"
-"Issue Tracker" = "https://github.com/Askuba77/rlds-paired/issues"
-Changelog       = "https://github.com/Askuba77/rlds-paired/blob/main/CHANGELOG.md"
+Repository      = "https://github.com/AKubanski/rlds-paired"
+"Issue Tracker" = "https://github.com/AKubanski/rlds-paired/issues"
+Changelog       = "https://github.com/AKubanski/rlds-paired/blob/main/CHANGELOG.md"
 "Paper III"     = "https://doi.org/10.5281/zenodo.19636371"
 "Paper IV"      = "https://doi.org/10.5281/zenodo.19640061"
 "RLDS-MAT"      = "https://github.com/AKubanski/rlds-mat"
